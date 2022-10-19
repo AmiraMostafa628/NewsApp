@@ -1,0 +1,1 @@
+//https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=b7060b8bcb4441e4a7ddc98f41f52c19
