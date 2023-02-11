@@ -6,7 +6,9 @@ import 'color.dart';
 ThemeData darkTheme =ThemeData(
   fontFamily: 'Jannah',
   primarySwatch: defaultColor,
+  brightness: Brightness.dark,
   scaffoldBackgroundColor:HexColor('333739'),
+  hintColor: Colors.white,
   appBarTheme: AppBarTheme(
       backgroundColor: HexColor('333739'),
       iconTheme: IconThemeData(
@@ -32,7 +34,7 @@ ThemeData darkTheme =ThemeData(
   ),
   textTheme: TextTheme(
       bodyText1: TextStyle(
-          fontSize: 20.0,
+          fontSize: 16.0,
           fontWeight: FontWeight.w600,
           color: Colors.white
       )
@@ -43,6 +45,7 @@ ThemeData darkTheme =ThemeData(
 ThemeData lightTheme =ThemeData(
   fontFamily: 'Jannah',
   primarySwatch: defaultColor,
+  brightness: Brightness.light,
   scaffoldBackgroundColor: Colors.white ,
   appBarTheme: AppBarTheme(
       backgroundColor: Colors.white,
@@ -69,9 +72,9 @@ ThemeData lightTheme =ThemeData(
   ),
   textTheme: TextTheme(
       bodyText1: TextStyle(
-          fontSize: 18.0,
+          fontSize: 16.0,
           fontWeight: FontWeight.w600,
-          color: Colors.black
+          color: Colors.white
       )
   ),
 );

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:newsapp/layout/newsLayout.dart';
@@ -12,11 +13,14 @@ import 'package:newsapp/shared/network/styles/theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  /*if(Platform.isWindows)
+    await DesktopWindow.setMinWindowSize(Size(400, 650));*/
+
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
   await CacheHelper.init();
   HttpOverrides.global = MyHttpOverrides();
-  dynamic isDark = CacheHelper.getBoolen(key: 'isDark');
+  dynamic isDark = CacheHelper.getData(key: 'isDark');
 
   runApp( MyApp(isDark,));
 }
@@ -37,7 +41,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context)=>NewsCubit()..getBusinessData()..getScienceData()..getSportData()..changeMode(fromshared: isDark),
+      create: (BuildContext context)=>NewsCubit()
+        ..getBusinessData()..getScienceData()..getSportData()..changeMode(fromshared: isDark),
       child: BlocConsumer<NewsCubit,AppStates>(
         listener: (context,state){},
         builder: (context,state){

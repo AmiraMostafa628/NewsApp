@@ -39,8 +39,12 @@ dependencies:
   dio: ^4.0.0
   hexcolor: ^2.0.5
   conditional_builder_null_safety: ^0.0.6
-  webview_flutter: ^2.0.0-nullsafety.4
   shared_preferences: ^2.0.5
+  desktop_window: ^0.4.0
+  responsive_builder: ^0.5.0+1
+  webview_flutter_web: ^0.2.2
+  webview_flutter: ^2.0.0-nullsafety.4
+
 
 
 dev_dependencies:

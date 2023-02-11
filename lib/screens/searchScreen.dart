@@ -16,6 +16,7 @@ class SearchScreen extends StatelessWidget {
       listener: (context,state){},
       builder:(context,state){
         var cubit = NewsCubit.get(context);
+        cubit.search=[];
         return Scaffold(
           appBar: AppBar(),
           body: Padding(

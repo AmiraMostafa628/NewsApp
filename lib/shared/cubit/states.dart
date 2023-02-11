@@ -10,6 +10,12 @@ class AppGetBusinessSuccessData extends AppStates{}
 
 class AppGetBusinessErrorData extends AppStates{}
 
+class AppBusinessSelectedItemData extends AppStates{}
+
+class AppsetDesktopSuccessData extends AppStates{}
+
+class AppsetMobileSuccessData extends AppStates{}
+
 class AppLoadingScienceData extends AppStates{}
 
 class AppGetScienceSuccessData extends AppStates{}

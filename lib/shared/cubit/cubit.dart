@@ -29,7 +29,19 @@ class NewsCubit extends Cubit<AppStates>{
   ];
 
   List <dynamic> business=[];
-
+  int businessItem=0;
+  bool isDesktop = false;
+  void setDesktop(bool value)
+  {
+    isDesktop=value;
+    emit(AppsetDesktopSuccessData());
+  }
+  //bool isMobile = false;
+  /*void setMobile(bool value)
+  {
+    isMobile=value;
+    emit(AppsetDesktopSuccessData());
+  }*/
   void getBusinessData(){
     emit(AppLoadingBusinessData());
     DioHelper.getData(
@@ -49,6 +61,12 @@ class NewsCubit extends Cubit<AppStates>{
     });
 
   }
+  void businessItemSelect(index)
+  {
+    businessItem=index;
+      emit(AppBusinessSelectedItemData());
+
+    }
 
   List <dynamic> science=[];
 
@@ -124,7 +142,7 @@ class NewsCubit extends Cubit<AppStates>{
     else
       {
         isDark=!isDark;
-        CacheHelper.saveBoolen(key: 'isDark', value:isDark).then((value) {
+        CacheHelper.saveData(key: 'isDark', value:isDark).then((value) {
           emit(AppChangeBottomModeState());
         });
 
