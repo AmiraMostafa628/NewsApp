@@ -36,12 +36,6 @@ class NewsCubit extends Cubit<AppStates>{
     isDesktop=value;
     emit(AppsetDesktopSuccessData());
   }
-  //bool isMobile = false;
-  /*void setMobile(bool value)
-  {
-    isMobile=value;
-    emit(AppsetDesktopSuccessData());
-  }*/
   void getBusinessData(){
     emit(AppLoadingBusinessData());
     DioHelper.getData(
