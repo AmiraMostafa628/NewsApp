@@ -55,7 +55,7 @@ Widget BuildArticleItem(article,context,index,isSearch){
                   children: [
                     Expanded(
                       child: Text( '${article['title']}',
-                        maxLines: 3,
+                        maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.bodyText1!.copyWith(
                           color: NewsCubit.get(context).isDark?Colors.white:Colors.black,
@@ -93,7 +93,7 @@ Widget ArticleBuilder(list,context,{bool isSearch = false}){
     builder:(context)=>ListView.separated(
         itemBuilder: (context,index)=>BuildArticleItem(list[index],context,index,isSearch),
         separatorBuilder: (context,index)=>myDivider(),
-        itemCount:7 ),
+        itemCount:list.length ),
     fallback: (context)=>isSearch?Container():Center(child: CircularProgressIndicator()),
 
   );

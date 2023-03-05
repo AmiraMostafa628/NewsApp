@@ -15,8 +15,6 @@ class SearchScreen extends StatelessWidget {
     return BlocConsumer<NewsCubit,AppStates>(
       listener: (context,state){},
       builder:(context,state){
-        var cubit = NewsCubit.get(context);
-        cubit.search=[];
         return Scaffold(
           appBar: AppBar(),
           body: Padding(
@@ -31,14 +29,16 @@ class SearchScreen extends StatelessWidget {
 
                     }},
                   keyboardType: TextInputType.text ,
-                  onChanged: (value)
+                  onFieldSubmitted:(text)
                   {
-                    cubit.SearchData(value);
+                    NewsCubit.get(context).SearchData(text);
                   },
                   decoration: InputDecoration(
                     labelText: 'Search',
                     prefixIcon: Icon(Icons.search),
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20)
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -48,7 +48,7 @@ class SearchScreen extends StatelessWidget {
                   LinearProgressIndicator(),
                 Expanded(
                   child: ArticleBuilder(
-                      cubit.search,
+                      NewsCubit.get(context).search,
                       context,
                       isSearch:true
                   ),

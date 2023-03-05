@@ -107,6 +107,7 @@ class NewsCubit extends Cubit<AppStates>{
   List <dynamic> search=[];
 
   void SearchData(value){
+    search=[];
     emit(AppLoadingSearchData());
     DioHelper.getData(
         url: 'v2/everything',

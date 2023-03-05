@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:newsapp/layout/newsLayout.dart';
@@ -8,7 +7,6 @@ import 'package:newsapp/shared/cubit/cubit.dart';
 import 'package:newsapp/shared/cubit/states.dart';
 import 'package:newsapp/shared/network/local/cacheHelper.dart';
 import 'package:newsapp/shared/network/remote/dioHelper.dart';
-import 'package:newsapp/shared/network/styles/color.dart';
 import 'package:newsapp/shared/network/styles/theme.dart';
 
 Future<void> main() async {
