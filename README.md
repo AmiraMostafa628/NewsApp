@@ -1,3 +1,4 @@
+![news_1](https://user-images.githubusercontent.com/103458291/222990362-0676eabd-fa96-47dd-a143-59bca62ef5f3.gif)
 # newsapp
 
 A new Flutter project.
